@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Alışveriş Listesi</title>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 rounded-lg">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h1 class="text-center mb-0 fs-3">
+                            <i class="bi bi-cart-check me-2"></i>Alışveriş Listesi
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <form class="shopping-form mb-4">
+                            <div class="input-group">
+                                <input type="text" id="item_name" class="form-control form-control-lg" 
+                                       placeholder="Ne almak istiyorsunuz?" autocomplete="off">
+                                <select class="form-select" id="item_category" style="max-width: 150px;">
+                                    <option value="genel">Genel</option>
+                                    <option value="meyve">Meyve</option>
+                                    <option value="sebze">Sebze</option>
+                                    <option value="et">Et</option>
+                                    <option value="süt">Süt Ürünleri</option>
+                                    <option value="temel">Temel Gıda</option>
+                                    <option value="temizlik">Temizlik</option>
+                                </select>
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                    <i class="bi bi-plus-lg"></i> Ekle
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="alert alert-info d-none" id="empty-message">
+                            <i class="bi bi-info-circle me-2"></i>Henüz hiç ürün eklenmemiş.
+                        </div>
+
+                        <div class="filter-buttons mb-4">
+                            <div class="btn-group w-100">
+                                <button item-filter="all" class="btn btn-outline-primary active">
+                                    <i class="bi bi-list-ul me-1"></i>Tümü
+                                </button>
+                                <button item-filter="incomplete" class="btn btn-outline-primary">
+                                    <i class="bi bi-circle me-1"></i>Alınacaklar
+                                </button>
+                                <button item-filter="completed" class="btn btn-outline-primary">
+                                    <i class="bi bi-check-circle me-1"></i>Alınanlar
+                                </button>
+                            </div>
+                        </div>
+
+                        <ul class="shopping-list list-unstyled mb-4" id="sortable-list"></ul>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-outline-danger clear">
+                                <i class="bi bi-trash me-1"></i>Listeyi Temizle
+                            </button>
+                            <div class="text-muted small">
+                                <span id="item-count">0</span> ürün
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# IDE ve editör dosyaları
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log dosyaları
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Bağımlılık dizinleri
+node_modules/
+jspm_packages/
+
+# Dağıtım dizinleri
+dist/
+build/
+
+# Çevre değişkenleri
+.env
+.env.local
+.env.*.local
+
+# Geçici dosyalar
+*.tmp
+*.temp
+.cache/ 
